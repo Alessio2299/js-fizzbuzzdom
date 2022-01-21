@@ -4,8 +4,9 @@ let containerElements = document.getElementById("container");
 let number = parseInt(prompt("Quanti quadrati vuoi inserire?"));
 // Creo un Ciclo
 for ( i=1; i <= number; i++){
-  // Stampo i vari box
+
   // Creo una Condizione
+  /*
   if (i % 3 == 0 && i % 5 == 0){
   containerElements.innerHTML += "<div class='box red'>fizzbuzz</div>";
   } else if (i % 3 == 0){
@@ -15,5 +16,20 @@ for ( i=1; i <= number; i++){
   }  else {
     containerElements.innerHTML += "<div class='box'>" + i + "</div>";
   }
+  */
+
+
+  switch (true) {
+    case (i % 3 == 0):
+      containerElements.innerHTML += "<div class='box green'>fizz</div>";
+    case (i % 5 == 0):
+      containerElements.innerHTML += "<div class='box yellow'>buzz</div>";
+    case (i % 3 == 0 && i % 5 == 0):
+      containerElements.innerHTML += "<div class='box red'>fizzbuzz</div>";
+      break;
+    default:
+      containerElements.innerHTML += "<div class='box'>" + i + "</div>";
+  }
 }
+
 
